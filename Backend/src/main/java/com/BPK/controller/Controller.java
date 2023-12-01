@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.BPK.model.Student;
 import com.BPK.service.StudentService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
