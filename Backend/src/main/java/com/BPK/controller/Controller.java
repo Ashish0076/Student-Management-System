@@ -62,7 +62,7 @@ public class Controller {
     @DeleteMapping("/student/{studentId}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Integer studentId) {
         studentService.deleteStudent(studentId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
 

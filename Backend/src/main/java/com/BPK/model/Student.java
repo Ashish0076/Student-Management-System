@@ -9,60 +9,84 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Student {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String name;
-	private String studentID;
-	private String major;
+	private String firstName;
+	private String lastName;
+	private String phoneNo;
+	private String Course;
+	private Gender gender;
+	private String Address;
 	private Date enrollmentDate;
 
-	// Constructors (default and parameterized)
-
 	public Student() {
-		// Default constructor
+
 	}
 
-	public Student(String name, String studentID, String major, Date enrollmentDate) {
-		this.name = name;
-		this.studentID = studentID;
-		this.major = major;
+	public Student(String firstName, String lastName, String phoneNo, String course, Gender gender, String address,
+			Date enrollmentDate) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNo = phoneNo;
+		Course = course;
+		this.gender = gender;
+		Address = address;
 		this.enrollmentDate = enrollmentDate;
 	}
-
-	// Getter and Setter methods
 
 	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public String getName() {
-		return name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public String getStudentID() {
-		return studentID;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public void setStudentID(String studentID) {
-		this.studentID = studentID;
+	public String getPhoneNo() {
+		return phoneNo;
 	}
 
-	public String getMajor() {
-		return major;
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
 
-	public void setMajor(String major) {
-		this.major = major;
+	public String getCourse() {
+		return Course;
+	}
+
+	public void setCourse(String course) {
+		Course = course;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	public String getAddress() {
+		return Address;
+	}
+
+	public void setAddress(String address) {
+		Address = address;
 	}
 
 	public Date getEnrollmentDate() {
@@ -73,11 +97,11 @@ public class Student {
 		this.enrollmentDate = enrollmentDate;
 	}
 
-	// toString method (for debugging and logging)
-
 	@Override
 	public String toString() {
-		return "Student{" + "id=" + id + ", name='" + name + '\'' + ", studentID='" + studentID + '\'' + ", major='"
-				+ major + '\'' + ", enrollmentDate=" + enrollmentDate + '}';
+		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNo=" + phoneNo
+				+ ", Course=" + Course + ", gender=" + gender + ", Address=" + Address + ", enrollmentDate="
+				+ enrollmentDate + "]";
 	}
+
 }
